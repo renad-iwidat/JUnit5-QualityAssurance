@@ -12,6 +12,10 @@
       <root url="jar://$PROJECT_DIR$/lib/junit-platform-engine-1.11.4.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/lib/junit-jupiter-5.11.4.jar!/" />
+      <root url="jar://$USER_HOME$/.ideaLibSources/junit-jupiter-api-5.11.4-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.ideaLibSources/junit-jupiter-api-5.11.4-sources.jar!/" />
+    </SOURCES>
   </library>
 </component>

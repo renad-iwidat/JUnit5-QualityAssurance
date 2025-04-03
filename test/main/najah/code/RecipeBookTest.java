@@ -116,7 +116,6 @@ public class RecipeBookTest {
 
     @AfterEach
     void tearDown() {
-        // Cleanup if needed
     }
 
     private Recipe createRecipe(String name, String price, String chocolate, String coffee, String milk, String sugar) throws RecipeException {

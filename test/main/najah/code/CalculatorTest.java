@@ -3,12 +3,11 @@ package main.najah.code;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
-
 import java.util.concurrent.TimeUnit;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 @DisplayName("Calculator Test")
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class CalculatorTest {
 
     Calculator calculator;
@@ -24,6 +23,7 @@ class CalculatorTest {
     }
 
     @Test
+    @Order(1)  // First test to run
     @DisplayName("Addition: Valid and Negative Numbers")
     void add() {
         assertAll("Valid addition tests",
@@ -37,6 +37,7 @@ class CalculatorTest {
     }
 
     @ParameterizedTest
+    @Order(2)  // Second test to run
     @CsvSource({
             "1, 2, 3",
             "2, 3, 5",
@@ -50,6 +51,7 @@ class CalculatorTest {
     }
 
     @Test
+    @Order(3)  // Third test to run
     @DisplayName("Division: Valid Cases and Divide by Zero")
     void divide() {
         assertAll("Valid division tests",
@@ -60,6 +62,7 @@ class CalculatorTest {
     }
 
     @Test
+    @Order(4)  // Fourth test to run
     @DisplayName("Factorial: Valid Cases")
     void factorialValid() {
         assertAll("Valid factorial tests",
@@ -70,12 +73,14 @@ class CalculatorTest {
     }
 
     @Test
+    @Order(5)  // Fifth test to run
     @DisplayName("Factorial: Negative Input Should Throw Exception")
     void factorialInvalid() {
         assertThrows(IllegalArgumentException.class, () -> calculator.factorial(-5), "Negative input should throw IllegalArgumentException");
     }
 
     @Test
+    @Order(6)  // Sixth test to run
     @DisplayName("Factorial Calculation Should Complete Within 1 Second")
     @Timeout(value = 1, unit = TimeUnit.SECONDS)
     void testFactorialTimeout() {
